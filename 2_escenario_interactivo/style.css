@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+.Principal {
+   width: 700px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fondo {
+   background-color: black;
+
+}
+
+.esferas {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+
+.esfera1 {
+    width: 50px;
+    height: 50px;
+}
