@@ -2,28 +2,102 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
-.Principal {
-   width: 700px;
-    height: 500px;
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.fondo {
-   background-color: black;
-
-}
-
-.esferas {
-    width: 50px;
-    height: 50px;
-    position: absolute;
+    height: 100vh;
+    background-color: #0c0f13; 
 }
 
 
-.esfera1 {
-    width: 50px;
-    height: 50px;
+.escenario-dragonball {
+    width: 750px;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    border: 3px solid #f9a825;
+    position: relative;
+    overflow: hidden; 
+}
+
+.asset {
+    position: absolute; 
+}
+.asset img {
+    width: 100%;
+    height: auto;
+}
+
+
+.esfera {
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle at 30% 30%, #ffd54f, #f57c00);
+    border-radius: 50%; 
+    box-shadow: 0 0 15px 5px rgba(255, 165, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: pulsar-brillo 3s ease-in-out infinite alternate;
+}
+
+.esfera img {
+    width: 60%; 
+    filter: drop-shadow(0 0 2px #c62828); 
+}
+
+
+
+.esfera {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.esfera:hover {
+    transform: scale(1.15); 
+    box-shadow: 0 0 25px 10px rgba(255, 235, 59, 0.8); 
+}
+
+.esfera-1 { top: 150px; left: 80px; }
+.esfera-2 { bottom: 40px; right: 150px; }
+.esfera-3 { top: 30px; left: 350px; }
+.esfera-4 { bottom: 180px; left: 250px; }
+.esfera-5 { top: 100px; right: 60px; }
+.esfera-6 { bottom: 50px; left: 450px; }
+.esfera-7 { top: 280px; right: 280px; }
+
+
+
+.shenron-animado {
+    width: 450px;
+    height: 450px;
+    top: -50px;
+    left: -80px;
+    opacity: 0.4; 
+    z-index: 0; 
+}
+
+
+
+
+@keyframes pulsar-brillo {
+    from {
+        box-shadow: 0 0 15px 5px rgba(255, 165, 0, 0.6);
+    }
+    to {
+        box-shadow: 0 0 25px 10px rgba(255, 235, 59, 0.8);
+    }
+}
+
+
+@keyframes mover-shenron {
+    0% {
+        transform: translate(0, 0) rotate(-5deg);
+    }
+    100% {
+        transform: translate(40px, 30px) rotate(5deg);
+    }
 }
