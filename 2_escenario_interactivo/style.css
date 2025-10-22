@@ -31,6 +31,13 @@ body {
     height: auto;
 }
 
+.goku {
+    width: 120px;
+    height: auto;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10; 
+}
 
 .esfera {
     width: 60px;
@@ -41,19 +48,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: pulsar-brillo 3s ease-in-out infinite alternate;
+/*     animation: pulsar-brillo 3s ease-in-out infinite alternate;
+ */    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease-in-out;
 }
 
 .esfera img {
     width: 60%; 
     filter: drop-shadow(0 0 2px #c62828); 
-}
-
-
-
-.esfera {
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .esfera:hover {
@@ -69,35 +71,73 @@ body {
 .esfera-6 { bottom: 50px; left: 450px; }
 .esfera-7 { top: 280px; right: 280px; }
 
-
-
 .shenron-animado {
     width: 450px;
     height: 450px;
-    top: -50px;
-    left: -80px;
-    opacity: 0.4; 
-    z-index: 0; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0; 
+    z-index: 0;
+    transition: opacity 1.5s ease-in-out; 
+}
+
+#reiniciar-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #f57c00;
+    border: 2px solid #ffd54f;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 20;
+    display: none;
+}
+
+#reiniciar-btn:hover {
+    background-color: #f9a825;
 }
 
 
-
-
-@keyframes pulsar-brillo {
+/* @keyframes pulsar-brillo {
     from {
         box-shadow: 0 0 15px 5px rgba(255, 165, 0, 0.6);
     }
     to {
         box-shadow: 0 0 25px 10px rgba(255, 235, 59, 0.8);
     }
+} */
+
+
+.salto {
+    animation: salto 0.5s ease forwards;
+}
+
+@keyframes salto {
+    0% { transform: translateY(0); opacity: 1;}
+    30% { transform: translateY(-60px);}
+    100% { transform: translateY(0); opacity: 0;}
 }
 
 
-@keyframes mover-shenron {
-    0% {
-        transform: translate(0, 0) rotate(-5deg);
-    }
-    100% {
-        transform: translate(40px, 30px) rotate(5deg);
-    }
+.esfera { 
+    animation: moveresfera 1s linear infinite alternate;
+}
+
+@keyframes moveresfera {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-40px); }
+}
+
+.goku {
+    animation: moverGoku 1s infinite alternate; 
+}
+
+@keyframes moverGoku {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
 }
