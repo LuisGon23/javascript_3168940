@@ -6,25 +6,36 @@
 
 body {
     display: flex;
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #0c0f13; 
+    min-height: 100vh; 
+    background-color: #0c0f13;
+    gap: 20px; 
 }
 
 
-.escenario-dragonball {
+.escenario-dragonball,
+.namek, .planetabils {
     width: 750px;
     height: 500px;
-    background-size: cover;
-    background-position: center;
     border: 3px solid #f9a825;
     position: relative;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
+.escenario-dragonball > img,
+.namek > img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
 .asset {
-    position: absolute; 
+    position: absolute;
 }
 .asset img {
     width: 100%;
@@ -36,31 +47,32 @@ body {
     height: auto;
     bottom: 20px;
     left: 20px;
-    z-index: 10; 
+    z-index: 10;
+    animation: moverGoku 1s infinite alternate;
 }
 
 .esfera {
     width: 60px;
     height: 60px;
     background: radial-gradient(circle at 30% 30%, #ffd54f, #f57c00);
-    border-radius: 50%; 
+    border-radius: 50%;
     box-shadow: 0 0 15px 5px rgba(255, 165, 0, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
-/*     animation: pulsar-brillo 3s ease-in-out infinite alternate;
- */    cursor: pointer;
+    cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease-in-out;
+    animation: moveresfera 1s linear infinite alternate;
 }
 
 .esfera img {
-    width: 60%; 
-    filter: drop-shadow(0 0 2px #c62828); 
+    width: 60%;
+    filter: drop-shadow(0 0 2px #c62828);
 }
 
 .esfera:hover {
-    transform: scale(1.15); 
-    box-shadow: 0 0 25px 10px rgba(255, 235, 59, 0.8); 
+    transform: scale(1.15);
+    box-shadow: 0 0 25px 10px rgba(255, 235, 59, 0.8);
 }
 
 .esfera-1 { top: 150px; left: 80px; }
@@ -77,9 +89,9 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    opacity: 0; 
+    opacity: 0;
     z-index: 0;
-    transition: opacity 1.5s ease-in-out; 
+    transition: opacity 1.5s ease-in-out;
 }
 
 #reiniciar-btn {
@@ -102,17 +114,6 @@ body {
     background-color: #f9a825;
 }
 
-
-/* @keyframes pulsar-brillo {
-    from {
-        box-shadow: 0 0 15px 5px rgba(255, 165, 0, 0.6);
-    }
-    to {
-        box-shadow: 0 0 25px 10px rgba(255, 235, 59, 0.8);
-    }
-} */
-
-
 .salto {
     animation: salto 0.5s ease forwards;
 }
@@ -123,21 +124,57 @@ body {
     100% { transform: translateY(0); opacity: 0;}
 }
 
-
-.esfera { 
-    animation: moveresfera 1s linear infinite alternate;
-}
-
 @keyframes moveresfera {
     0% { transform: translateX(0); }
     100% { transform: translateX(-40px); }
-}
-
-.goku {
-    animation: moverGoku 1s infinite alternate; 
 }
 
 @keyframes moverGoku {
     0% { transform: translateY(0); }
     100% { transform: translateY(-20px); }
 }
+
+.ataque {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    bottom: 100px;
+    left: 300px;
+}
+
+.ataque img {
+     width: 100%; 
+     height: auto;
+}
+
+.mover{
+    animation: moverEnergia 1s linear infinite alternate;
+}
+
+.ataque2 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    bottom: 100px;
+    left: 80px;
+    top: 80px;
+}
+
+.ataque2 img {
+     width: 100%; 
+     height: auto;
+}
+
+.ataque3 {
+    position: absolute;
+    width: 80px;
+    height: 100px;
+    bottom: 100px;
+    left: 500px;
+    top: 150px;
+}
+@keyframes moverEnergia {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-30px); }
+}
+
