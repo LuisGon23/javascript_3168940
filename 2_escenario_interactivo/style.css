@@ -14,30 +14,37 @@ body {
     gap: 20px; 
 }
 
-
 .escenario-dragonball,
-.namek, .planetabils {
+.namek, 
+.planetabils {
     width: 750px;
     height: 500px;
     border: 3px solid #f9a825;
-    position: relative;
+    position: relative; 
     overflow: hidden;
 }
 
 .escenario-dragonball > img,
-.namek > img {
+.namek > img,
+.planetabils > img { 
     width: 100%;
     height: 100%;
+    object-fit: cover; 
     position: absolute;
     top: 0;
     left: 0;
 }
 
-
 .asset {
     position: absolute;
 }
-.asset img {
+
+.asset img,
+.freezer img, 
+.gokublue img,
+.aura img,
+.ataque img, .ataque2 img, .ataque3 img, 
+.ataque4 img, .ataque5 img, .ataque6 img { 
     width: 100%;
     height: auto;
 }
@@ -114,6 +121,56 @@ body {
     background-color: #f9a825;
 }
 
+
+.freezer {
+    position: absolute;
+    width: 140px; 
+    height: auto;
+    bottom: 80px;
+    left: 50%; 
+    transform: translateX(-50%); 
+}
+
+.ataque, .ataque2, .ataque3, .ataque4, .ataque5, .ataque6 {
+    position: absolute;
+    width: 50px; 
+    height: 50px;
+}
+
+.ataque { bottom: 200px; left: 300px; }
+.ataque2 { top: 80px; left: 80px; }
+.ataque3 { top: 150px; right: 100px; }
+.ataque4 { top: 40px; left: 450px; }
+.ataque5 { bottom: 50px; left: 150px; }
+.ataque6 { bottom: 120px; right: 200px; }
+
+.mover {
+    animation: moverEnergia 1s linear infinite alternate;
+}
+
+
+.gokublue {
+    position: absolute;
+    width: 150px; 
+    height: auto;
+    bottom: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 10;
+}
+
+.aura {
+    position: absolute;
+    width: 200px; 
+    height: auto;
+    bottom: 0; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 5;
+    opacity: 0.7;
+
+}
+
 .salto {
     animation: salto 0.5s ease forwards;
 }
@@ -134,47 +191,12 @@ body {
     100% { transform: translateY(-20px); }
 }
 
-.ataque {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    bottom: 100px;
-    left: 300px;
-}
-
-.ataque img {
-     width: 100%; 
-     height: auto;
-}
-
-.mover{
-    animation: moverEnergia 1s linear infinite alternate;
-}
-
-.ataque2 {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    bottom: 100px;
-    left: 80px;
-    top: 80px;
-}
-
-.ataque2 img {
-     width: 100%; 
-     height: auto;
-}
-
-.ataque3 {
-    position: absolute;
-    width: 80px;
-    height: 100px;
-    bottom: 100px;
-    left: 500px;
-    top: 150px;
-}
 @keyframes moverEnergia {
     0% { transform: translateY(0); }
     100% { transform: translateY(-30px); }
 }
 
+@keyframes auraopacidad {
+    0% { opacity: 0.7; }
+    100% { opacity: 0.3; }
+}
