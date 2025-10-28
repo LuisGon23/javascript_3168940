@@ -192,6 +192,32 @@ body {
     animation: salto 0.5s ease forwards;
 }
 
+
+.galeria {  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    background-color: rgba(194, 105, 4, 0.7); 
+    border-radius: 10px;
+}
+
+.galeria img {
+    width: 100px;
+    height: auto;
+    border: 2px solid #f57c00;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.galeria img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px 5px rgba(255, 165, 0, 0.8);
+}
+
 @keyframes salto {
     0% { transform: translateY(0); opacity: 1;}
     30% { transform: translateY(-60px);}
@@ -248,3 +274,4 @@ body {
 .aura-ui.activada {
     opacity: 1;
 }
+

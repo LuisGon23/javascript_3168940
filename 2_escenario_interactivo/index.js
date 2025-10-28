@@ -80,7 +80,7 @@ gokuBlue.addEventListener('click', () => {
 
     if (clicsGoku === clicsParaTransformar) {
         contadorGoku.textContent = "¡UI!";
-        gokuBlueImg.src = 'pngwing.com (2).png';
+        gokuBlueImg.src = 'pngwing.com (2 ).png';
         aura.classList.add('aura-ui', 'activada');
     }
 });
