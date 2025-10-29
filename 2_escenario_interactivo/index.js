@@ -84,3 +84,39 @@ gokuBlue.addEventListener('click', () => {
         aura.classList.add('aura-ui', 'activada');
     }
 });
+
+//Galeria//
+
+const escenas = document.querySelectorAll('.escenas');
+const siguienteBtn = document.querySelector('#siguiente-btn');
+const anteriorBtn = document.querySelector('#anterior-btn');
+const galeria = document.querySelector('.galeria');
+let indice = 0;
+
+console.log(escenas);
+
+function mostrarEscena(i) {
+   
+    for (let j = 0; j < escenas.length; j++) {
+        escenas[j].classList.remove("activa");
+    }
+    escenas[i].classList.add("activa");
+    indice = i; 
+}
+mostrarEscena(0);
+
+anteriorBtn.addEventListener("click", function() {
+    let nuevoIndice = indice - 1;
+    if (nuevoIndice < 0) {
+        nuevoIndice = escenas.length - 1;
+    }
+    mostrarEscena(nuevoIndice);
+});
+
+siguienteBtn.addEventListener('click', function() {
+    let nuevoIndice = indice + 1;
+    if (nuevoIndice >= escenas.length) {
+        nuevoIndice = 0;
+    }
+    mostrarEscena(nuevoIndice);
+});

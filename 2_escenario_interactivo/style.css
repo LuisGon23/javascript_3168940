@@ -193,6 +193,9 @@ body {
 }
 
 
+.escenas {display: none;}
+.activa {display: block!important;}
+
 .galeria {  
     display: flex;
     justify-content: center;
@@ -275,3 +278,35 @@ body {
     opacity: 1;
 }
 
+#siguiente-btn {
+    position: absolute;
+    right: 5px;
+    padding: 30px 40px;
+    font-size: 16px;
+    color: white;
+    background-color: #f57c00;
+    border: 2px solid #ffd54f;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+#siguiente-btn:hover {
+    background-color: #f9a825;
+}
+
+#anterior-btn {
+    position: absolute;
+    left: 5px;
+    padding: 30px 40px;
+    font-size: 16px;
+    color: white;
+    background-color: #f57c00;
+    border: 2px solid #ffd54f;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#anterior-btn:hover {
+    background-color: #f9a825;
+}
