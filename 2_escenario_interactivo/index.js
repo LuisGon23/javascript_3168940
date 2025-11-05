@@ -1,16 +1,20 @@
 const jell = document.querySelectorAll('.escenario-dragonball .jellyfish');
 const tablero = document.querySelector('.escenario-dragonball .contador h2');
+const sonido = document.querySelector('.sonido');
+
 let counter = 0;
 
 console.log(jell, tablero);
 
 jell.forEach(item => {
+    
     item.addEventListener('click', () => {
         if (item.style.filter !== "grayscale(1)") {
             item.style.filter = "grayscale(1)";
             item.classList.add('salto');
             counter++;
             tablero.textContent = counter;
+            sonido.play();
         }
     });
 });
@@ -19,6 +23,7 @@ const ataques = document.querySelectorAll('.namek .mover');
 const freezer = document.querySelector('.namek .freezer');
 const vidaFreezerDisplay = document.querySelector('.namek .contador h2');
 const tituloContadorNamek = document.querySelector('.namek .contador h1');
+const sonido2 = document.querySelector('.sonido2');
 
 let vidaFreezer = 100;
 vidaFreezerDisplay.textContent = vidaFreezer;
@@ -36,7 +41,7 @@ ataques.forEach(ataque => {
         if (vidaFreezer < 0) {
             vidaFreezer = 0;
         }
-
+        sonido2.play();
         vidaFreezerDisplay.textContent = vidaFreezer;
 
         freezer.classList.add('freezer-hit');
@@ -55,6 +60,7 @@ const gokuBlue = document.querySelector('.gokublue');
 const gokuBlueImg = document.querySelector('.gokublue img');
 const aura = document.querySelector('.aura');
 const contadorGoku = document.querySelector('.planetabils .contador h2');
+const sonido3 = document.querySelector('.sonido3');
 
 let clicsGoku = 0;
 const clicsParaTransformar = 5;
@@ -70,6 +76,7 @@ gokuBlue.addEventListener('click', () => {
 
     aura.classList.add('activada');
     setTimeout(() => aura.classList.remove('activada'), 500);
+    sonido3.play();
 
     if (clicsGoku === clicsParaTransformar) {
         contadorGoku.textContent = "¡UI!";
