@@ -1,9 +1,15 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #141519; 
     color: #ffffff; 
     font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    
     padding-top: 60px; 
 }
 
@@ -12,72 +18,116 @@ a {
     color: inherit;
 }
 
+img {
+    display: block;
+    max-width: 100%;
+}
+
 
 .main-header {
     background-color: #23252b;
     border-bottom: 1px solid #333;
-    padding: 0 20px;
+    padding: 0 24px;
     position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    box-sizing: border-box;
 }
 
 .navegacion {
     display: flex;
     align-items: center;
+    justify-content: space-between; 
     height: 60px;
-    max-width: 1400px;
+    max-width: 1600px; 
     margin: 0 auto;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
 }
 
 .logo h1 {
     color: #f47521;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     margin: 0;
-    padding-right: 25px;
+    padding-right: 30px;
 }
 
 .nav-links a {
     color: #d3d3d3;
     padding: 10px 15px;
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: bold;
     transition: color 0.2s ease-in-out;
+    position: relative;
 }
 
-.nav-links a:hover {
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    right: 15px;
+    height: 2px;
+    background-color: #f47521;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
     color: #ffffff; 
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
 }
 
 .nav-links a.active {
     color: #f47521; 
-    border-bottom: 2px solid #f47521;
-    padding-bottom: 8px;
 }
 
-/* --- CONTENIDO PRINCIPAL --- */
+.nav-links a.active::after {
+    transform: scaleX(1);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-icon {
+    color: #d3d3d3;
+    transition: color 0.2s ease;
+}
+.header-icon:hover {
+    color: #f47521;
+}
+
+
 .contenido-principal {
-    padding: 20px;
-    max-width: 1400px;
-    margin: 20px auto;
+    padding: 40px 24px;
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
 .section-title {
-    font-size: 1.8em;
-    margin-bottom: 20px;
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 24px;
     border-left: 4px solid #f47521;
-    padding-left: 10px;
+    padding-left: 15px;
 }
-
 
 .grid-container {
     display: grid;
-   
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 25px 15px; 
+    
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 32px 16px; 
 }
 
 .card {
@@ -85,54 +135,91 @@ a {
     transition: transform 0.2s ease-in-out;
 }
 
-.card:hover {
-    transform: scale(1.05); 
-}
-
 .card-image-container {
     width: 100%;
     aspect-ratio: 2 / 3; 
     background-color: #2b2b2b;
     overflow: hidden;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    border-radius: 4px; 
+    position: relative;
 }
 
 .card img {
     width: 100%;
     height: 100%;
     object-fit: cover; 
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
+
+.card-link:hover .card-image-container img {
+    transform: scale(1.05); 
+    filter: brightness(1.1);
+}
+
+.card-link:hover .card-title {
+    color: #f47521; 
+}
+
 
 .card-content {
     padding: 0 5px;
 }
 
 .card-title {
-    font-size: 1.1em;
+    font-size: 1.1rem;
     font-weight: bold;
     color: #ffffff;
     margin: 0 0 5px 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    transition: color 0.2s ease;
 }
 
 .card-description {
-    font-size: 0.9em;
+    font-size: 0.9rem;
     color: #a0a0a0; 
     margin: 0;
 }
 
+
+.footer {
+    background-color: #23252b;
+    color: #888888;
+    text-align: center;
+    padding: 50px 0;
+    margin-top: 80px;
+    border-top: 1px solid #333;
+    font-size: 0.9rem;
+}
+
+
 @media (max-width: 768px) {
+    .contenido-principal {
+        padding: 24px 16px;
+    }
     .grid-container {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
-
     .logo h1 {
-        font-size: 1.2em;
+        font-size: 1.2rem;
     }
     .nav-links a {
         padding: 10px 8px;
-        font-size: 0.9em;
+        font-size: 0.9rem;
+    }
+    .main-header {
+        padding: 0 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 24px 12px;
+    }
+    .nav-links {
+        display: none;
     }
 }
