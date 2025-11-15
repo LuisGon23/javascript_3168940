@@ -1,8 +1,8 @@
 let comic = {
   "nombreComic": "Eco olvidado",
   "numeroCapitulos": "3",
-  "genero": "....",
-  "sipnosis": "Un joven de 17 años decide ir a un museo abandonado donde encontrar un peculiar mentor del pasado",
+  "genero": "Dramatico, inspirador",
+  "sinopsis": "Un joven de 17 años decide ir a un museo abandonado donde encontrar un peculiar mentor del pasado",
   "autores": ["Santiago", "Luis", "Salome"],
   "portadaComic": "imagen.jpg",
   "year": 2025,
