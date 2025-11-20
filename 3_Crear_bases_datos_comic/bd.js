@@ -6,6 +6,26 @@ let comic = {
   "autores": ["Santiago", "Luis", "Salome"],
   "portadaComic": "imagen.jpg",
   "year": 2025,
+  "personajes": [
+    {
+      "nombre": "Raizura",
+      "rol": "Protagonista",
+      "descripcion": "Un joven curioso y apasionado por la musica",
+      "imagen": "Generated Image November 12, 2025 - 4_35PM.png"
+    },
+    {
+      "nombre": "Fruko",
+      "rol": "Mentor",
+      "descripcion": "Un musico legendario que guia a Raizura en su viaje",
+      "imagen": "Generated Image November 12, 2025 - 4_35PM (2).png"
+    },
+    {
+      "nombre": "Abuela",
+      "rol": "Apoyo familiar",
+      "descripcion": "La abuela sabia que siempre apoya a Raizura",
+      "imagen": "Generated Image November 12, 2025 - 4_35PM (1).png"
+    }
+  ],
   "capitulos": [
     {
         "id": 1,
