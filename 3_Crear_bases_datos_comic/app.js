@@ -20,3 +20,22 @@ comic.personajes.forEach(char => {
     `
     gridContainer.appendChild(div);
 });
+
+
+// Capitulos 
+
+const gridContainer2 = document.querySelector (".grid-container2")
+
+comic.capitulos.forEach(char => {
+    const div = document.createElement("div")
+    div.classList.add("card-capitulos")
+    div.innerHTML = `
+        <h3>${char.nombre}</h3>
+        <p><strong>Rol:</strong> ${char.rol}</p>
+        <p>${char.descripcion}</p>
+        <p><img src="${char.portada}" alt="${char.nombre}"></p>
+    `
+
+        gridContainer2.appendChild(div);
+
+})
