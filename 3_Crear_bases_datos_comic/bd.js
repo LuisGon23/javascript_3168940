@@ -2,7 +2,7 @@ let comic = {
   "nombreComic": "Eco olvidado",
   "numeroCapitulos": "3",
   "genero": "Dramatico, inspirador",
-  "sinopsis": "Un joven de 17 años decide ir a un museo abandonado donde encontrar un peculiar mentor del pasado",
+  "sinopsis": "Raizura, un joven del futuro donde la música en vivo casi no existe, visita el viejo Museo de Fruko antes de su demolición. Al tocar un piano olvidado, despierta el espíritu de Fruko, quien le enseña a sentir y vivir la música. Con sus lecciones, Raizura descubre un legado que parecía perdido. El día final, toca en la plaza y hace que la gente vuelva a bailar. Viéndolo, el fantasma se desvanece en paz al saber que su ritmo seguirá vivo.",
   "autores": ["Santiago", "Luis", "Salome"],
   "portadaComic": "imagen.jpg",
   "year": 2025,
@@ -10,13 +10,13 @@ let comic = {
     {
       "nombre": "Raizura",
       "rol": "Protagonista",
-      "descripcion": "Un joven curioso y apasionado por la musica",
+      "descripcion": "Un joven curioso y apasionado por la música",
       "imagen": "Generated Image November 12, 2025 - 4_35PM.png"
     },
     {
       "nombre": "Fruko",
       "rol": "Mentor",
-      "descripcion": "Un musico legendario que guia a Raizura en su viaje",
+      "descripcion": "Un músico legendario que guía a Raizura en su viaje",
       "imagen": "Generated Image November 12, 2025 - 4_35PM (2).png"
     },
       { 
@@ -28,7 +28,7 @@ let comic = {
     {
       "nombre": "Reportero",
       "rol": "Comentador",
-      "descripcion": "Es el que se encarga de informar sobre la demolición del museo",
+      "descripcion": "El encargado de informar sobre la demolición del museo",
       "imagen": "Generated Image November 12, 2025 - 4_35PM (3).png"
     },
     { 
@@ -40,7 +40,7 @@ let comic = {
     {
        "nombre": "Ciudadanos",
       "rol": "NPC",
-      "descripcion": "Personas que viven su dia a dia en la ciudad",
+      "descripcion": "Personas que viven su día a día en la ciudad",
       "imagen": "Generated Image November 12, 2025 - 4_44PM (1).png"
     }
   ],
