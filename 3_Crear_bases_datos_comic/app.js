@@ -1,3 +1,5 @@
+import { comic } from "./bd.js";
+
 const herocontent = document.querySelector(".hero-content");
 
 herocontent.innerHTML = `   
@@ -12,11 +14,12 @@ const gridContainer = document.querySelector(".grid-container");
 comic.personajes.forEach(char => {
     const div = document.createElement("div");
     div.classList.add("card-personaje");
-    div.innerHTML = `
+    div.innerHTML = ` 
+        <a href="./personajes.html?id=${char.id}">
         <h3>${char.nombre}</h3>        
         <p><img src="${char.imagen}" alt="${char.nombre}"></p>
         <p><strong>Rol:</strong> ${char.rol}</p>
-        <p>${char.descripcion}</p>
+        <p>${char.descripcion}</p> </a>
     `
     gridContainer.appendChild(div);
 });

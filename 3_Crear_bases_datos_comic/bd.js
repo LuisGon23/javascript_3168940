@@ -1,4 +1,4 @@
-let comic = {
+ export let comic = {
   "nombreComic": "Eco olvidado",
   "numeroCapitulos": "3",
   "genero": "Dramatico, inspirador",
@@ -8,36 +8,41 @@ let comic = {
   "year": 2025,
   "personajes": [
     {
+      "id": 1,
       "nombre": "Raizura",
       "rol": "Protagonista",
       "descripcion": "Un joven curioso y apasionado por la música",
       "imagen": "Generated Image November 12, 2025 - 4_35PM.png"
     },
     {
+      "id": 2,
       "nombre": "Fruko",
       "rol": "Mentor",
       "descripcion": "Un músico legendario que guía a Raizura en su viaje",
       "imagen": "Generated Image November 12, 2025 - 4_35PM (2).png"
     },
-      { 
+    {
+      "id": 3,
        "nombre": "Abuela",
       "rol": "Guía familiar",
       "descripcion": "Es la que da la chispa de curiosidad por la música a Raizura",
       "imagen": "Generated Image November 12, 2025 - 4_35PM (1).png"
     },
     {
+      "id": 4,
       "nombre": "Reportero",
       "rol": "Comentador",
       "descripcion": "El encargado de informar sobre la demolición del museo",
       "imagen": "Generated Image November 12, 2025 - 4_35PM (3).png"
     },
-    { 
+    { "id": 5,
        "nombre": "Constructores",
       "rol": "Trabajadores de obra",
       "descripcion": "Son quienes preparan y realizan la demolición del museo",
       "imagen": "Generated Image November 12, 2025 - 4_44PM.png"
     },
     {
+      "id": 6,
        "nombre": "Ciudadanos",
       "rol": "NPC",
       "descripcion": "Personas que viven su día a día en la ciudad",
