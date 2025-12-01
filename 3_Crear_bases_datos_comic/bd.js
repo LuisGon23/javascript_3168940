@@ -10,8 +10,8 @@
     {
       "id": 1,
       "nombre": "Raizura",
-      "rol": "Protagonista",
-      "descripcion": "Un joven curioso y apasionado por la música",
+      "rol": "Heredero",
+      "descripcion": "Raizura, un joven del año 2185, descubre en el Museo de Fruko y sus Tesos que posee un legado musical olvidado. Guiado por el fantasma de Fruko y un antiguo piano, aprende que la música se basa en sentir y expresar. Al tocar en público, logra reavivar en la sociedad el valor de la música humana y mantener vivo ese ritmo ancestral.",
       "imagen": "Generated Image November 12, 2025 - 4_35PM.png"
     },
     {
