@@ -87,7 +87,8 @@ img { display: block; max-width: 100%; }
 .nav-btn.next { color: #ffffff; background-color: #ff0000; }
 .nav-btn.next:hover { background-color: #cc0000; }
 
-.episode-details-container {
+/* AQUÍ ESTÁ EL CAMBIO PRINCIPAL */
+.contenido-capitulo {
     max-width: 1200px;
     margin: 40px auto 80px;
     padding: 0 4vw;

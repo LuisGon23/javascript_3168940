@@ -34,6 +34,7 @@ comic.capitulos.forEach(char => {
     div.classList.add("card-capitulos")
     div.innerHTML = `
         <h3>${char.nombre}</h3>
+                <a href="./capitulos.html?id=${char.id}">
         <p><strong>Personajes:</strong> ${char.personajes.join(", ")}</p>
         <p>${char.descripcion}</p>
         <p><img src="${char.portada}" alt="${char.nombre}"></p>
