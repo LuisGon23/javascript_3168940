@@ -3,6 +3,10 @@ import { comic } from './bd.js';
 const params = new window.URLSearchParams(window.location.search)
 const id = parseInt ( params.get('id') )
 const miCapitulo = comic.capitulos.find( c => c.id === id )
+if (!miCapitulo){  
+    window.location.href = "index.html";
+    throw new Error("El capítulo no existe");
+}
 
 const containerCapitulo = document.querySelector('.contenido-capitulo')
 console.log(containerCapitulo)

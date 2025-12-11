@@ -23,6 +23,13 @@ img {
     max-width: 100%;
 }
 
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
 .main-header {
     background-color: #1A1A1D;
     border-bottom: 1px solid #2C2C2E;
@@ -32,13 +39,14 @@ img {
     left: 0;
     width: 100%;
     z-index: 1000;
+    height: 64px;
 }
 
 .navegacion {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 64px;
+    height: 100%;
     max-width: 1920px; 
     margin: 0 auto;
 }
@@ -55,6 +63,11 @@ img {
     font-weight: 700;
     margin: 0;
     padding-right: 20px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
 }
 
 .nav-links a {
@@ -79,17 +92,14 @@ img {
 }
 
 .nav-links a:hover,
-.nav-links a:focus {
+.nav-links a:focus,
+.nav-links a.active {
     color: #ffffff; 
 }
 
 .nav-links a:hover::after,
 .nav-links a.active::after {
     transform: scaleX(1);
-}
-
-.nav-links a.active {
-    color: #ffffff; 
 }
 
 .nav-right {
@@ -106,187 +116,48 @@ img {
     color: #ff0000;
 }
 
+
 .contenido-principal {
-    padding: 64px 4vw;
+    padding: 0; 
     max-width: 1920px;
     margin: 0 auto;
 }
 
-.section-title {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-top: 0;
-    margin-bottom: 48px;
-    border-left: 5px solid #ff0000;
-    padding-left: 20px;
-    color: #FAFAFA;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 
- 
-    gap: 56px 32px; 
-}
-
-.card {
-    background-color: transparent;
-    cursor: pointer;
-}
-
-.card-image-container {
-    width: 100%;
-    aspect-ratio: 2 / 3; 
-    background-color: #2C2C2E;
-    overflow: hidden;
-    margin-bottom: 16px; 
-    border-radius: 6px; 
-    position: relative;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
-}
-
-.card:hover .card-image-container {
-    transform: translateY(-10px); 
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
-}
-
-.card-image-container::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 50%;
-    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.card:hover .card-image-container::after {
-    opacity: 1;
-}
-
-.card-tag {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background-color: rgba(11, 12, 16, 0.8);
-    color: #ff0000;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    z-index: 2;
-}
-
-.card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.card:hover img {
-    transform: scale(1.1);
-}
-
-.card-content {
-    padding: 0 8px;
-}
-
-.card-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #FAFAFA;
-    margin: 0 0 6px 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    transition: color 0.2s ease;
-}
-
-.card:hover .card-title {
-    color: #ff0000; 
-}
-
-.card-description {
-    font-size: 0.95rem;
-    color: #A0A0A0; 
-    margin: 0;
-    font-weight: 400;
-}
-
-.main-footer-container {
-    background-color: #1A1A1D;
-    color: #A0A0A0;
-    padding: 80px 4vw 40px;
-    margin-top: 100px;
-    border-top: 1px solid #2C2C2E;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.footer-section {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.footer-section h4 {
-    color: #ffffff;
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin: 0 0 10px;
-}
-
-.footer-section a {
-    font-size: 0.9rem;
-}
-
-.footer-section a:hover {
-    color: #ff2600;
-    text-decoration: underline;
-}
-
-.footer-copyright {
-    text-align: center;
-    font-size: 0.85rem;
-    color: #707070;
-    padding-top: 40px;
-    border-top: 1px solid #2C2C2E;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-
 .hero-banner {
     position: relative;
+    width: 100%;
     height: 85vh; 
-    margin: -64px -4vw 64px; 
+    margin-bottom: 64px;
     display: flex;
     align-items: flex-end; 
-    color: #ffffff;
     overflow: hidden;
+    
 }
 
-.hero-background {
+.slider-frame {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('Generated Image November 12, 2025 - 4_44PM.png'); 
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
+    z-index: 0; 
+}
+.slider-frame ul {
+    display: flex;
+    width: 400%; 
+    height: 100%;
+    animation: slide 10s infinite alternate ease-in-out;
+}
+
+.slider-frame li {
+    width: 25%; 
+    height: 100%;
+}
+
+.slider-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
 }
 
 .hero-gradient {
@@ -294,16 +165,18 @@ img {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 80%;
-    background: linear-gradient(to top, #0B0C10 15%, rgba(11, 12, 16, 0.7) 50%, rgba(11, 12, 16, 0) 100%);
-    z-index: 2;
+    height: 100%;
+    background: linear-gradient(to top, #0B0C10 10%, rgba(11, 12, 16, 0.8) 50%, rgba(11, 12, 16, 0.1) 100%);
+    z-index: 1;
+    pointer-events: none;
 }
 
 .hero-content {
     position: relative;
-    z-index: 3;
+    z-index: 2; 
     padding: 0 4vw 10vh;
-    max-width: 45%;
+    width: 100%;
+    max-width: 900px;
 }
 
 .hero-title {
@@ -361,24 +234,110 @@ img {
     background-color: rgba(110, 110, 110, 0.5);
     color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.4);
-}
-.btn-secondary span:first-child{
-    font-size: 1.5rem;
-    line-height: 1;
+    backdrop-filter: blur(5px);
 }
 
 .btn-secondary:hover {
     background-color: rgba(140, 140, 140, 0.7);
 }
 
-.contenido-principal {
-    padding-top: 0;
+
+.main-container-padding {
+    padding: 0 4vw;
 }
 
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 48px;
+    border-left: 5px solid #ff0000;
+    padding-left: 20px;
+    color: #FAFAFA;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 
+    gap: 56px 32px;
+    padding: 0 4vw; 
+}
+
+.card {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.card-image-container {
+    width: 100%;
+    aspect-ratio: 2 / 3; 
+    background-color: #2C2C2E;
+    overflow: hidden;
+    margin-bottom: 16px; 
+    border-radius: 6px; 
+    position: relative;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
+}
+
+.card:hover .card-image-container {
+    transform: translateY(-10px); 
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
+}
+
+.card-image-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .card-image-container::after {
+    opacity: 1;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #FAFAFA;
+    margin: 0 0 6px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 0.2s ease;
+}
+
+.card:hover .card-title {
+    color: #ff0000; 
+}
+
+.card-description {
+    font-size: 0.95rem;
+    color: #A0A0A0; 
+    margin: 0;
+    font-weight: 400;
+}
 
 .capitulos-section {
     margin-top: 80px;
     margin-bottom: 40px;
+    padding: 0 4vw;
 }
 
 .capitulos-section::before {
@@ -409,6 +368,7 @@ img {
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     height: 100%; 
     position: relative;
+    cursor: pointer;
 }
 
 .card-capitulos:hover {
@@ -417,17 +377,9 @@ img {
     border-color: #ff0000; 
 }
 
-.card-capitulos p:last-child {
-    order: -1; 
-    margin: 0;
-    width: 100%;
-    height: 180px; 
-    overflow: hidden;
-}
-
 .card-capitulos img {
     width: 100%;
-    height: 100%;
+    height: 160px;
     object-fit: cover; 
     transition: transform 0.4s ease;
 }
@@ -435,7 +387,6 @@ img {
 .card-capitulos:hover img {
     transform: scale(1.1);
 }
-
 
 .card-capitulos h3 {
     font-size: 1.25rem;
@@ -451,8 +402,63 @@ img {
     line-height: 1.5;
 }
 
-.card-capitulos p strong {
-    color: #E0E0E0;
+.main-footer-container {
+    background-color: #1A1A1D;
+    color: #A0A0A0;
+    padding: 80px 4vw 40px;
+    margin-top: 100px;
+    border-top: 1px solid #2C2C2E;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer-section h4 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 10px;
+}
+
+.footer-section a:hover {
+    color: #ff0000;
+    text-decoration: underline;
+}
+
+.footer-copyright {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #707070;
+    padding-top: 40px;
+    border-top: 1px solid #2C2C2E;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Animaciones */
+
+@keyframes slide {
+    0% { margin-left: 0; }
+    20% { margin-left: 0; }
+    25% { margin-left: -100%; }
+    45% { margin-left: -100%; }
+    50% { margin-left: -200%; }
+    70% { margin-left: -200%; }
+    75% { margin-left: -300%; }
+    95% { margin-left: -300%; }
+    100% { margin-left: 0; } 
 }
 
 @media (max-width: 992px) {
@@ -463,7 +469,7 @@ img {
 
 @media (max-width: 768px) {
     .nav-links {
-        display: none; 
+        display: none;
     }
     .logo h1 {
         font-size: 1.4rem;
@@ -475,11 +481,144 @@ img {
     .section-title {
         font-size: 1.8rem;
     }
+    .hero-banner {
+        height: 70vh;
+    }
 }
 
 @media (max-width: 480px) {
     .grid-container {
         grid-template-columns: repeat(2, 1fr); 
         gap: 32px 16px;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .btn {
+        width: 100%;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.contenido-principal {
+    animation: fadeIn 1.5s ease-out forwards;
+    opacity: 0;
+}
+
+.main-header {
+    animation: fadeIn 2s ease-out forwards;
+}
+
+.hero-title, .hero-content, .hero-gradient
+.hero-description, .hero-buttons {
+    opacity: 0;
+    animation: fadeInUp 2s ease-out forwards;
+}
+
+.hero-title {
+    animation-delay: 1s;
+}
+
+.hero-description {
+    animation-delay: 1s;
+}
+
+.hero-buttons {
+    animation-delay: 1s;
+}
+
+.grid-container, .capitulos-section {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 1s;
+}
+
+.slider-frame {
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+    animation-delay: 1s;
+}
+
+
+.card-personaje {
+    background-color: #1A1A1D; 
+    border: 1px solid #2C2C2E;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    cursor: pointer;
+}
+
+.card-personaje:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.5);
+    border-color: #ff0000;
+}
+
+.card-personaje a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.card-personaje img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    transition: transform .35s ease;
+}
+
+.card-personaje:hover img {
+    transform: scale(1.08);
+}
+
+.card-personaje h3 {
+    padding: 14px 16px 8px;
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.card-personaje p {
+    padding: 0 16px 14px;
+    font-size: 0.95rem;
+    color: #A0A0A0;
+    line-height: 1.5;
+}
+
+.card-personaje strong {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .card-personaje h3 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-personaje {
+        border-radius: 6px;
     }
 }

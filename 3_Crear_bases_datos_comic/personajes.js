@@ -7,6 +7,10 @@ const id = parseInt ( params.get('id') )
 
 //comparar id de URl con id de la base de datos
 const miPersonaje = comic.personajes.find( p => p.id === id )
+if (!miPersonaje){  
+    window.location.href = "index.html";
+    throw new Error("El personaje no existe");
+}
 
 //console.log("El personaje encontrado es:", miPersonaje);
 const containerPersonaje = document.querySelector('.contenido-personaje')
@@ -26,29 +30,15 @@ containerPersonaje.innerHTML = `
         
         <div class="image-wrapper">
             <img src="${miPersonaje.imagen}">
-            <div class="status-badge alive">Vivo</div> 
         </div>
 
         <div class="profile-info">
-            <h1 class="char-name">${miPersonaje.nombre} <span class="char-alias">${miPersonaje.rol}</span></h1>
-            <p class="char-role">Protagonista</p>
-
-            <div class="char-stats-grid">
-                <div class="stat-box">
-                    <span class="stat-label">Origen</span>
-                    <span class="stat-value">Desconocido</span>
-                </div>
-            </div>
+            <h1 class="char-name">${miPersonaje.nombre} <span class="char-alias">"${miPersonaje.rol}"</span></h1>
 
             <div class="char-bio">
                 <h3>Biografía</h3>
                 <p>${miPersonaje.descripcion}</p>
             </div>
-
-            <div class="char-actions">
-                <button class="btn btn-primary">Ver Episodios Relacionados</button>
-            </div>
-        </div>
     </div>
 
 </main>
